@@ -1,0 +1,15 @@
+html
+    head
+        title= title
+    body
+        p Dados dos #{response.count} Filmes
+        ul 
+            each result in response.results
+                li= 'Título: ' + result.title
+                li= 'Episódio: ' + result.episode_id 
+                li= 'Sinopse: ' + result.opening_crawl
+                li= 'Diretor: ' + result.director
+                li= 'Produtor: ' + result.producer
+                li= 'Lançamento: ' + result.release_date
+                a(href='/films/' + result.episode_id) Detalhes do Filme
+                

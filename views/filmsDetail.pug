@@ -1,0 +1,17 @@
+html
+    head
+        title= title
+    body
+        each specie in response.species
+            li= specie
+        each starship in response.starships
+            li= starship
+        each vehicle in response.vehicles
+            li= vehicle
+        each character in response.characters
+            li= character
+        each planet in response.planets
+            li= planet
+        li= response.url
+        li= response.created
+        li= response.edited
