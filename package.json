@@ -1,0 +1,16 @@
+{
+  "name": "swapiconsumer",
+  "version": "1.0.0",
+  "description": "SWAPI Consumer using Node.js/Express/Pug",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonatas E Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "request": "^2.88.0"
+  }
+}
