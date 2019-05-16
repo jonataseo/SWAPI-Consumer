@@ -2,11 +2,13 @@ const express = require('express')
 const api_helper = require('./API_helper')
 const app = express()
 const port = 3000
+const path = require('path')
 
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug');
 
 app.get('/', function (req, res, next) {
-    res.send('APP running');
+    res.render('index', {title: 'A Simple SWAPI Consumer Using Node.js, Express.js and Pug.js', message: 'It works!!(Apache fellings)'})
 })
 
 app.get('/films', function(req, res, next)  {
