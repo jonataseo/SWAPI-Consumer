@@ -1,8 +1,8 @@
 const express = require('express')
-const api_helper = require('./routes/API_helper')
 const app = express()
 const port = 3000
 const path = require('path')
+
 
 const filmsRouter = require('./routes/films')
 const indexRouter = require('./routes/index')
@@ -14,3 +14,5 @@ app.use('/films', filmsRouter)
 app.use('/', indexRouter)
 
 app.listen(port, () => console.log(`App listening on port ${port}`))
+
+module.exports = app;
