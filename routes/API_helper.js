@@ -14,7 +14,7 @@ module.exports = {
         
 
         ///TO DO
-        
+
         // Obtendo todas as rotas para dados do filme X
         const species = Object.values(filmsDetail.species)
         const starships = Object.values(filmsDetail.starships)
@@ -29,11 +29,11 @@ module.exports = {
                 if(error){
                     console.dir(error)
                 }
-                console.log(JSON.parse(body))
-                result.push(JSON.parse(body))
+                let json = JSON.parse(body)
+                let a = json.name
+                result.push(a)
             })
-        }   
-
+        } 
         //Dados das Naves Espaciais
         for(var starship of starships)
         {
@@ -41,7 +41,7 @@ module.exports = {
                 if(error){
                     console.dir(error)
                 }
-                result.push(JSON.parse(body))
+                //result.starship = JSON.parse(body)
             })
         }   
 
@@ -52,7 +52,7 @@ module.exports = {
                 if(error){
                     console.dir(error)
                 }
-                result.push(JSON.parse(body))
+                //result.vehicle = JSON.parse(body)
             })
         }   
 
@@ -63,7 +63,7 @@ module.exports = {
                 if(error){
                     console.dir(error)
                 }
-                result.push(JSON.parse(body))
+                //result.character = JSON.parse(body)
             })
         }
         
@@ -74,9 +74,8 @@ module.exports = {
                 if(error){
                     console.dir(error)
                 }
-                result.push(JSON.parse(body))
+                //result.planet = JSON.parse(body)
             })
-        }   
-        return result
+        }         
     }
 }
