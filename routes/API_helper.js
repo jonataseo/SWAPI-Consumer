@@ -8,5 +8,75 @@ module.exports = {
                 resolve(body)
             });
         })
+    },
+
+    get_film_details : function(filmsDetail, result) {
+        
+
+        ///TO DO
+        
+        // Obtendo todas as rotas para dados do filme X
+        const species = Object.values(filmsDetail.species)
+        const starships = Object.values(filmsDetail.starships)
+        const vehicles = Object.values(filmsDetail.vehicles)
+        const characters = Object.values(filmsDetail.characters)
+        const planets = Object.values(filmsDetail.planets)
+        
+        //Dados das espécies
+        for(var specie of species)
+        {
+            request.get(specie, (error, response, body) => {
+                if(error){
+                    console.dir(error)
+                }
+                console.log(JSON.parse(body))
+                result.push(JSON.parse(body))
+            })
+        }   
+
+        //Dados das Naves Espaciais
+        for(var starship of starships)
+        {
+            request.get(starship, (error, response, body) => {
+                if(error){
+                    console.dir(error)
+                }
+                result.push(JSON.parse(body))
+            })
+        }   
+
+        //Dados dos Veículos
+        for(var vehicle of vehicles)
+        {
+            request.get(vehicle, (error, response, body) => {
+                if(error){
+                    console.dir(error)
+                }
+                result.push(JSON.parse(body))
+            })
+        }   
+
+        //Dados dos personagens
+        for(var character of characters)
+        {
+            request.get(character, (error, response, body) => {
+                if(error){
+                    console.dir(error)
+                }
+                result.push(JSON.parse(body))
+            })
+        }
+        
+        //Dados dos planetas
+        for(var planet of planets)
+        {
+            request.get(specie, (error, response, body) => {
+                if(error){
+                    console.dir(error)
+                }
+                result.push(JSON.parse(body))
+            })
+        }   
+        return result
     }
 }

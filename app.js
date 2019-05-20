@@ -3,7 +3,6 @@ const app = express()
 const port = 3000
 const path = require('path')
 
-const speciesRouter = require('./routes/species')
 const filmsRouter = require('./routes/films')
 const indexRouter = require('./routes/index')
 
@@ -12,7 +11,6 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug');
 
 /* Rotas usadas pelo app*/
-app.use('/species', speciesRouter)
 app.use('/films', filmsRouter)
 app.use('/', indexRouter)
 
