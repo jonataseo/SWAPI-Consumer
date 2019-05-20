@@ -7,14 +7,14 @@ const api_helper = require('../routes/API_helper')
 router.get('/', function(req, res)  {    
     api_helper.make_API_call('https://swapi.co/api/films/')
     .then(response => {
-        res.render('films', {response})
+        res.send(200).render('films', {response})
     })
     .catch(error => {
         res .status(500).send(error)
     })
 })
 
-/* GET:/films/:id => Retorna os detalhes de um filme de SW */
+/* GET: /films/:id => Retorna os detalhes de um filme de SW */
 router.get('/:id', function(req, res) {
     var url = `https://swapi.co/api/films/${req.params.id}`;
     api_helper.make_API_call(url)

@@ -2,16 +2,18 @@ html
     head
         title= title
     body
+        p Espécies apresentadas
         each specie in response.species
             li= specie
+        p Naves Espaciais
         each starship in response.starships
             li= starship
+        p Veículos
         each vehicle in response.vehicles
             li= vehicle
+        p Personagens
         each character in response.characters
             li= character
+        p Planetas
         each planet in response.planets
-            li= planet
-        li= response.url
-        li= response.created
-        li= response.edited
+            li= planet       
